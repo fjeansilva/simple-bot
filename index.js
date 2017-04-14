@@ -3,6 +3,11 @@ const app = express();
 // token
 const TOKEN = 'EAACvS7vIzdcBAI3qvn9CWoHHXauiB3iZBbDCIsaUf1igoiiT5ZBB8SnUGlZAApu2EyUIeZAFjIrToh38QdXz0sZBUmaB6HBsEZA6BWaPUvEaZCAFOewVuoJCRUwiZC7TeSiv08FDwdZANGKEaURcDs9HO9ZCUIaKxmzifZCCRRQFxoSagZDZD';
 
+
+app.get('/', function(req, res) {
+  res.send({ hello: 'world'});
+});
+
 app.get('/webhook', function(req, res) {
 
   if (req.query['hub.mode'] === 'subscribe' &&
