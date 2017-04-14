@@ -32,6 +32,8 @@ function receivedMessage(event) {
   console.log("Message data: ", event.message);
 }
 
-app.listen(3000, function(){
+const port = 3000 || process.env.PORT;
+
+app.listen(port, function(){
   console.log('server running');
 });
