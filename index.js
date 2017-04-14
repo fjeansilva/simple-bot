@@ -3,7 +3,6 @@ const app = express();
 // token
 const TOKEN = 'EAACvS7vIzdcBAI3qvn9CWoHHXauiB3iZBbDCIsaUf1igoiiT5ZBB8SnUGlZAApu2EyUIeZAFjIrToh38QdXz0sZBUmaB6HBsEZA6BWaPUvEaZCAFOewVuoJCRUwiZC7TeSiv08FDwdZANGKEaURcDs9HO9ZCUIaKxmzifZCCRRQFxoSagZDZD';
 
-
 app.get('/', function(req, res) {
   res.send({ hello: 'world'});
 });
@@ -32,8 +31,8 @@ function receivedMessage(event) {
   console.log("Message data: ", event.message);
 }
 
-const port = 3000 || process.env.PORT;
+app.set('port', (process.env.PORT || 5000));
 
-app.listen(port, function(){
+app.listen(app.get('port'), function(){
   console.log('server running');
 });
